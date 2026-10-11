@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exit 0 — הכול עובד. בלי כאבי ראש. | DevSecOps, SRE ותמיכת IT</title>
+<meta name="description" content="DevSecOps, SRE, הקשחת אבטחה, ניהול ענן ושרתים, מיגרציה בין מערכות הפעלה ואינטגרציות ב-Go, Python ו-Bash לחברות B2B. עבודה מרחוק, חולון.">
+<link rel="canonical" href="https://exit0.space/he/">
+<link rel="alternate" hreflang="en" href="https://exit0.space/">
+<link rel="alternate" hreflang="he" href="https://exit0.space/he/">
+<link rel="alternate" hreflang="x-default" href="https://exit0.space/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#0B0D0F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Exit 0">
+<meta property="og:locale" content="he_IL">
+<meta property="og:url" content="https://exit0.space/he/">
+<meta property="og:title" content="Exit 0 — הכול עובד. בלי כאבי ראש.">
+<meta property="og:description" content="DevSecOps, SRE, אבטחה ותמיכת IT מרחוק לחברות B2B.">
+<meta property="og:image" content="https://exit0.space/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&amp;family=Karantina:wght@400;700&amp;family=Archivo:wdth,wght@62..125,100..900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#0B0D0F}
+a{color:#ECEEF0}a:hover{color:#FFFFFF}
+.c-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:720px){.c-grid{grid-template-columns:minmax(0,1fr)}.c-hub{display:none}}
+@keyframes dcblink{50%{opacity:0}}
+.dc-cursor{animation:dcblink 1.1s steps(1) infinite}
+@media (prefers-reduced-motion: reduce){.dc-cursor{animation:none}}
+</style>
+<style>
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+img{max-width:100%}
+:focus-visible{outline:2px solid #C8F031;outline-offset:3px}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline-offset:0}
+</style>
+</head>
+<body>
+<div dir="rtl" style="font-family: 'IBM Plex Sans Hebrew', 'Archivo', 'Arial Hebrew', system-ui, sans-serif; color: #ECEEF0; background: #0B0D0F; font-size: 16px; line-height: 1.55">
+
+<header style="border-bottom: 1px solid #1F242B">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+<a href="#top" dir="ltr" style="display: flex; align-items: center; gap: 12px; text-decoration: none; min-height: 44px">
+<span aria-hidden="true" style="display: grid; place-items: center; width: 32px; height: 32px; background: #C8F031; color: #0B0D0F; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-weight: 700; font-size: 0.85rem">&gt;_</span>
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-weight: 700; font-size: 1.15rem; letter-spacing: 0.02em">exit <span style="color: #C8F031">0</span></span>
+</a>
+<nav aria-label="ראשי" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 0.95rem">
+<a href="#services" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; color: #C3CAD2">שירותים</a>
+<a href="#clients" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; color: #C3CAD2">לקוחות</a>
+<a href="#engage" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; color: #C3CAD2">איך אנחנו עובדים</a>
+<div dir="ltr" style="display: flex; align-items: stretch; border: 1px solid #3A424C">
+<a href="../" hreflang="en" lang="en" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; text-decoration: none; box-sizing: border-box; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.8rem; color: #C3CAD2">EN</a>
+<span aria-current="true" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; text-decoration: none; box-sizing: border-box; font-family: 'IBM Plex Sans Hebrew', system-ui, sans-serif; font-size: 0.9rem; background: #ECEEF0; color: #0B0D0F; font-weight: 700"><svg aria-hidden="true" width="22" height="16" viewBox="0 0 220 160" style="display: block; flex: 0 0 auto"><rect width="220" height="160" fill="#FFFFFF"></rect><rect y="15" width="220" height="25" fill="#0038B8"></rect><rect y="120" width="220" height="25" fill="#0038B8"></rect><path d="M110 50 L136 95 L84 95 Z M110 110 L136 65 L84 65 Z" fill="none" stroke="#0038B8" stroke-width="7"></path></svg><span>עברית</span></span>
+</div>
+<a href="#contact" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; background: #C8F031; color: #0B0D0F; font-weight: 600">לקביעת שיחה</a>
+</nav>
+</div>
+</header>
+
+<section id="top" style="padding: 88px 24px; background-color: #0B0D0F; background-image: radial-gradient(#1C2127 1px, transparent 1px); background-size: 24px 24px">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; letter-spacing: 0; color: #A3ACB6">עבודה מרחוק · IT · אבטחה · ענן · תמיכה</p>
+<h1 style="margin: 0; display: flex; flex-direction: column; font-family: 'Karantina', 'IBM Plex Sans Hebrew', sans-serif; font-weight: 700; font-size: clamp(3.75rem, 7.5vw, 7rem); line-height: 0.88">
+<span>הכול עובד.</span>
+<span style="color: #C8F031">בלי כאבי ראש.</span>
+</h1>
+<p style="margin: 0; max-width: 36rem; font-size: 1.2rem; color: #C3CAD2; text-wrap: pretty"><strong style="font-weight: 600; color: #FFFFFF">צוות אחד לכל ה-IT שלכם.</strong> מחשבים ניידים, שרתים, ענן והתוכנה שמחברת ביניהם — מוקמים, מאובטחים ונתמכים על ידי אותם מהנדסים. בלי העברת אחריות בין ספקים ובלי האשמות הדדיות.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#contact" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; background: #C8F031; color: #0B0D0F; font-weight: 600; font-size: 1.05rem">לקביעת שיחת היכרות של 30 דקות <span aria-hidden="true">←</span></a>
+<a href="#services" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border: 1px solid #3A424C; box-sizing: border-box; font-weight: 500; font-size: 1.05rem">מה אנחנו עושים</a>
+</div>
+</div>
+
+<div style="flex: 1 1 520px; min-width: 0; position: relative">
+<div class="c-grid" style="display: grid; gap: 12px">
+<div style="background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 12px; min-height: 210px; box-sizing: border-box">
+<span aria-hidden="true" style="color: #C8F031"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1"></rect><path d="M2 19h20"></path></svg></span>
+<h2 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.25rem">מחשבים ניידים ונייחים</h2>
+<p style="margin: 0; color: #C3CAD2">מחשבי Windows, Mac ו-Linux — מוקמים, מאובטחים ומעודכנים תמיד.</p>
+<p style="margin: auto 0 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; color: #8B95A0">Windows · macOS · Linux</p>
+</div>
+<div style="background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 12px; min-height: 210px; box-sizing: border-box">
+<span aria-hidden="true" style="color: #C8F031"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1"></rect><rect x="3" y="13" width="18" height="7" rx="1"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg></span>
+<h2 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.25rem">שרתים</h2>
+<p style="margin: 0; color: #C3CAD2">שרתי Linux מוקשחים, מנוטרים ומעודכנים — עם נהלי עבודה ברורים.</p>
+<p style="margin: auto 0 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; color: #8B95A0">Any Linux · on-prem</p>
+</div>
+<div style="background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 12px; min-height: 210px; box-sizing: border-box">
+<span aria-hidden="true" style="color: #C8F031"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6.1 9.5 4.25 4.25 0 0 0 7 18z"></path></svg></span>
+<h2 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.25rem">ענן</h2>
+<p style="margin: 0; color: #C3CAD2">AWS וענני GPU — מתוכננים ומתופעלים בלי הפתעות בחשבונית.</p>
+<p style="margin: auto 0 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; color: #8B95A0">AWS · GPU cloud</p>
+</div>
+<div style="background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 12px; min-height: 210px; box-sizing: border-box">
+<span aria-hidden="true" style="color: #C8F031"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"></path></svg></span>
+<h2 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.25rem">תוכנה ואינטגרציות</h2>
+<p style="margin: 0; color: #C3CAD2">בונים, מתקנים ומחברים את הכלים שלכם — Go, Python, Bash ועוד, על כל מערכת הפעלה.</p>
+<p style="margin: auto 0 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; color: #8B95A0">Go · Python · Bash · any OS</p>
+</div>
+</div>
+<div class="c-hub" aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 112px; height: 112px; box-sizing: border-box; border: 8px solid #0B0D0F; background: #C8F031; color: #0B0D0F; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-weight: 700; pointer-events: none">
+<span style="font-size: 0.85rem">&gt;_</span>
+<span style="font-size: 1.05rem">exit 0</span>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="לקוחות" style="border-top: 1px solid #1F242B; border-bottom: 1px solid #1F242B; padding: 0 24px; background: #0F1215">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: stretch">
+<p style="margin: 0; flex: 0 1 240px; display: flex; align-items: center; padding: 28px 0 28px 24px; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0; color: #8B95A0">סומכים עלינו בפרודקשן</p>
+<div style="flex: 1 1 320px; display: flex; align-items: center; padding: 28px 24px; border-right: 1px solid #1F242B">
+<img src="../assets/brainspace-white.png" alt="Brain.Space LTD" style="display: block; height: 38px; width: auto">
+</div>
+<div style="flex: 1 1 320px; display: flex; align-items: center; padding: 28px 24px; border-right: 1px solid #1F242B">
+<div style="display: flex; align-items: center; gap: 14px">
+<img src="../assets/almax-icon.png" alt="" style="display: block; width: 52px; height: 52px; border-radius: 8px">
+<span style="font-stretch: 125%; font-weight: 800; font-size: clamp(1.15rem, 1.8vw, 1.5rem); letter-spacing: 0">Almax Andasa LTD</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 72px 24px">
+<div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #2C333C; padding-top: 24px">
+<span dir="ltr" style="align-self: flex-start; font-stretch: 125%; font-weight: 800; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; letter-spacing: 0; color: #C8F031">44</span>
+<span style="font-size: 1.05rem; color: #C3CAD2">שרתי Linux בניהול יומיומי, רובם ב-AWS</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #2C333C; padding-top: 24px">
+<span dir="ltr" style="align-self: flex-start; font-stretch: 125%; font-weight: 800; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; letter-spacing: 0; color: #C8F031">60+</span>
+<span style="font-size: 1.05rem; color: #C3CAD2">מחשבים ניידים ותחנות עבודה: Windows, macOS ו-Linux</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #2C333C; padding-top: 24px">
+<span dir="ltr" style="align-self: flex-start; font-stretch: 125%; font-weight: 800; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; letter-spacing: 0; color: #C8F031">32</span>
+<span style="font-size: 1.05rem; color: #C3CAD2">תחנות עבודה בפרודקשן, מוקשחות לפי CIS Level 2</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #2C333C; padding-top: 24px">
+<span dir="ltr" style="align-self: flex-start; font-stretch: 125%; font-weight: 800; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; letter-spacing: 0; color: #C8F031">3</span>
+<span style="font-size: 1.05rem; color: #C3CAD2">מערכות הפעלה בצי אחד: Linux, Windows, macOS</span>
+</div>
+</div>
+</section>
+
+<section id="services" style="padding: 104px 24px; border-top: 1px solid #1F242B">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; letter-spacing: 0; color: #A3ACB6">01 — שירותים</p>
+<h2 style="margin: 0; max-width: 54rem; font-stretch: 125%; font-weight: 800; font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.02; letter-spacing: 0; text-wrap: balance">כל מה שבין ארון השרתים ל-CI pipeline.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+
+<div style="flex: 2 1 560px; min-width: 0; background-color: #111418; background-image: linear-gradient(#181D23 1px, transparent 1px), linear-gradient(90deg, #181D23 1px, transparent 1px); background-size: 32px 32px; border: 1px solid #2C333C; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">01</span>
+<h3 style="margin: 0; font-stretch: 125%; font-weight: 800; font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.1; letter-spacing: 0">מיגרציה ואינטגרציה של מערכות הפעלה</h3>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 8px 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 1rem">
+<span style="padding: 12px 18px; background: #0B0D0F; border: 1px solid #3A424C">Windows</span>
+<span aria-hidden="true" style="font-size: 1.5rem; color: #C8F031">⇄</span>
+<span style="padding: 12px 18px; background: #0B0D0F; border: 1px solid #C8F031">Linux</span>
+</div>
+<p style="margin: 0; color: #C3CAD2; max-width: 38rem">מעבר של חברה מ-Windows ל-Linux — או בחזרה — בלי לעצור את העבודה: העברת נתונים ופרופילים של משתמשים, תאימות אפליקציות, אינטגרציה עם שירותי ספרייה ו-SSO, רישום ל-MDM, וציים מעורבים שבהם שתי הפלטפורמות פשוט עובדות יחד.</p>
+<p style="margin: auto 0 0; padding-top: 16px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">Windows ⇄ Linux · SSO · MDM · Mixed fleets</p>
+</div>
+
+<div style="flex: 1 1 280px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">02</span>
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.35rem; line-height: 1.2">DevSecOps</h3>
+<p style="margin: 0; color: #C3CAD2">אבטחה שמובנית בתהליך הפיתוח וההפצה: CI/CD מוקשח, ניהול secrets, סריקת תלויות ו-images, ו-policy-as-code.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">CI/CD · Secrets · Scanning</p>
+</div>
+
+<div style="flex: 1 1 280px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">03</span>
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.35rem; line-height: 1.2">הקשחת אבטחה</h3>
+<p style="margin: 0; color: #C3CAD2">תצורות בסיס לפי CIS Level 2 ל-Linux, Windows ו-macOS, מדיניות AppArmor ו-MDM, וניהול פגיעויות ועדכוני אבטחה.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">CIS L2 · AppArmor · Patching</p>
+</div>
+
+<div style="flex: 2 1 560px; min-width: 0; background-color: #111418; background-image: linear-gradient(#181D23 1px, transparent 1px), linear-gradient(90deg, #181D23 1px, transparent 1px); background-size: 32px 32px; border: 1px solid #2C333C; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">04</span>
+<h3 style="margin: 0; font-stretch: 125%; font-weight: 800; font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.1; letter-spacing: 0">פרויקטי תוכנה ואינטגרציות</h3>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; padding: 4px 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-weight: 700; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1">
+<span style="color: #C8F031">go</span>
+<span aria-hidden="true" style="color: #3A424C">/</span>
+<span style="color: #C8F031">python</span>
+<span aria-hidden="true" style="color: #3A424C">/</span>
+<span style="color: #C8F031">bash</span>
+<span aria-hidden="true" style="color: #3A424C">/</span>
+<span>+ עוד*</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem">
+<span style="padding: 6px 12px; background: #0B0D0F; border: 1px solid #3A424C; color: #C3CAD2">Linux</span>
+<span style="padding: 6px 12px; background: #0B0D0F; border: 1px solid #3A424C; color: #C3CAD2">Windows</span>
+<span style="padding: 6px 12px; background: #0B0D0F; border: 1px solid #3A424C; color: #C3CAD2">macOS</span>
+</div>
+<p style="margin: 0; color: #C3CAD2; max-width: 38rem">אנחנו בונים, מתקנים ומשלבים פרויקטי תוכנה — Go, Python ו-Bash ברמת מומחה, ושפות נוספות* — ודואגים שירוצו באמינות על Linux, Windows ו-macOS: שירותים ו-APIs, כלים פנימיים וסוכנים, אוטומציה, אריזה, CI/CD ופריסה.</p>
+<p style="margin: 0; font-size: 0.8rem; color: #8B95A0">* שפות נוספות — בהתאם לפרויקט.</p>
+<p style="margin: auto 0 0; padding-top: 16px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">Create · Fix · Integrate · Any OS</p>
+</div>
+
+<div style="flex: 1 1 280px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">05</span>
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.35rem; line-height: 1.2">אמינות מערכות (SRE)</h3>
+<p style="margin: 0; color: #C3CAD2">ניטור והתראות שמזהים בעיות לפני שהמשתמשים שלכם מרגישים בהן, יחד עם טיפול בתקלות ותחקירים ללא האשמות.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">Monitoring · Alerting · Incidents</p>
+</div>
+
+<div style="flex: 1 1 280px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">06</span>
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.35rem; line-height: 1.2">ניהול ענן</h3>
+<p style="margin: 0; color: #C3CAD2">תכנון, בקרת עלויות ותפעול שוטף של סביבות ענן, כולל AWS וענני GPU לעומסי חישוב כבדים.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">AWS · GPU cloud · Cost control</p>
+</div>
+
+<div style="flex: 1 1 280px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">07</span>
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.35rem; line-height: 1.2">שרתים מקומיים וציי מחשבים</h3>
+<p style="margin: 0; color: #C3CAD2">Golden images, הקמה אוטומטית וניהול מחזור חיים לציי תחנות עבודה ושרתים.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">Golden images · Provisioning · MDM</p>
+</div>
+
+<div style="flex: 1 1 280px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; color: #C8F031">08</span>
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.35rem; line-height: 1.2">תמיכה טכנית</h3>
+<p style="margin: 0; color: #C3CAD2">תמיכה שוטפת בתשתיות שאנחנו בונים: חיבורים מרחוק, פתרון תקלות ונהלי עבודה מתועדים — כך ששום דבר לא תלוי בזיכרון של אדם אחד.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; color: #8B95A0">Remote · Runbooks · SLA</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="clients" style="padding: 104px 24px; background: #0F1215; border-top: 1px solid #1F242B; border-bottom: 1px solid #1F242B">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; letter-spacing: 0; color: #A3ACB6">02 — לקוחות</p>
+<h2 style="margin: 0; max-width: 54rem; font-stretch: 125%; font-weight: 800; font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.02; letter-spacing: 0; text-wrap: balance">נבנה ורץ בפרודקשן, לא במצגות.</h2>
+</div>
+<div dir="ltr" style="flex: 1 1 420px; min-width: 0; max-width: 560px; background: #0B0D0F; border: 1px solid #2C333C; box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6); font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.85rem">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #1F242B; color: #8B95A0; font-size: 0.75rem">
+<span>~/fleet</span>
+<span>status</span>
+</div>
+<div style="padding: 18px 16px 20px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; color: #ECEEF0"><span style="color: #C8F031">$</span> fleet status --all</p>
+<div style="overflow-x: auto">
+<table style="border-collapse: collapse; width: 100%; white-space: nowrap; font-size: 0.8rem">
+<thead>
+<tr style="color: #8B95A0">
+<th style="text-align: left; font-weight: 400; padding: 0 16px 8px 0">HOST</th>
+<th style="text-align: left; font-weight: 400; padding: 0 16px 8px 0">OS</th>
+<th style="text-align: left; font-weight: 400; padding: 0 16px 8px 0">BASELINE</th>
+<th style="text-align: left; font-weight: 400; padding: 0 0 8px 0">PATCHES</th>
+</tr>
+</thead>
+<tbody style="color: #C3CAD2">
+<tr>
+<td style="padding: 5px 16px 5px 0">ws-prd-01</td>
+<td style="padding: 5px 16px 5px 0">ubuntu 24.04</td>
+<td style="padding: 5px 16px 5px 0">cis-l2</td>
+<td style="padding: 5px 0; color: #C8F031">ok</td>
+</tr>
+<tr>
+<td style="padding: 5px 16px 5px 0">srv-db-02</td>
+<td style="padding: 5px 16px 5px 0">debian 12</td>
+<td style="padding: 5px 16px 5px 0">hardened</td>
+<td style="padding: 5px 0; color: #C8F031">ok</td>
+</tr>
+<tr>
+<td style="padding: 5px 16px 5px 0">aws-app-07</td>
+<td style="padding: 5px 16px 5px 0">rhel 9</td>
+<td style="padding: 5px 16px 5px 0">hardened</td>
+<td style="padding: 5px 0; color: #C8F031">ok</td>
+</tr>
+<tr>
+<td style="padding: 5px 16px 5px 0">fin-03</td>
+<td style="padding: 5px 16px 5px 0">windows 11</td>
+<td style="padding: 5px 16px 5px 0">hardened</td>
+<td style="padding: 5px 0; color: #C8F031">ok</td>
+</tr>
+<tr>
+<td style="padding: 5px 16px 5px 0">mac-02</td>
+<td style="padding: 5px 16px 5px 0">macos</td>
+<td style="padding: 5px 16px 5px 0">hardened</td>
+<td style="padding: 5px 0; color: #F5B544">2 pending</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; color: #ECEEF0"><span style="color: #C8F031">$</span> echo $?</p>
+<p style="margin: -8px 0 0; color: #C8F031">0</p>
+<p style="margin: 0; display: flex; align-items: center; gap: 8px; color: #ECEEF0"><span style="color: #C8F031">$</span><span class="dc-cursor" aria-hidden="true" style="display: inline-block; width: 9px; height: 1.1em; background: #ECEEF0"></span></p>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<article style="flex: 1 1 520px; min-width: 0; background: #0B0D0F; border: 1px solid #2C333C; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<img src="../assets/brainspace-white.png" alt="" style="display: block; height: 32px; width: auto; align-self: flex-start">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px">
+<h3 style="margin: 0; font-stretch: 125%; font-weight: 800; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.05; letter-spacing: 0">Brain.Space LTD</h3>
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0; color: #8B95A0">לקוח</span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>הקשחה של 32 תחנות עבודה בפרודקשן עם Ubuntu 24.04 לפי CIS Level 2, בצי של כ-45 מחשבי Linux, Windows ו-macOS</span></li>
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>ניהול מרכזי של מכשירים ומדיניות באמצעות JumpCloud MDM</span></li>
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>פיתוח פלטפורמה פנימית לניהול עדכונים, במקום מוצר מסחרי לניהול פגיעויות</span></li>
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>דשבורד גרסאות לכל הצי: שירות ב-Go שרץ על AWS EC2</span></li>
+</ul>
+</article>
+<article style="flex: 1 1 520px; min-width: 0; background: #0B0D0F; border: 1px solid #2C333C; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<img src="../assets/almax-icon.png" alt="" style="display: block; width: 56px; height: 56px; border-radius: 10px; align-self: flex-start">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px">
+<h3 style="margin: 0; font-stretch: 125%; font-weight: 800; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.05; letter-spacing: 0">Almax Andasa LTD</h3>
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0; color: #8B95A0">לקוח</span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>סביבה מעורבת: 18 מחשבים ניידים עם Windows ו-44 שרתי Linux מבוססי Ubuntu</span></li>
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>תשתית היברידית: רובה ב-AWS, חלקה בשרתים מקומיים</span></li>
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>כמחצית מהסביבה מוקשחת לפי CIS Level 2</span></li>
+<li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1F242B; color: #C3CAD2"><span aria-hidden="true" style="flex: 0 0 auto; width: 8px; height: 8px; margin-top: 9px; background: #C8F031"></span><span>תפעול מלא: הקשחה, ניהול, עדכונים, ניטור ותמיכה בכל מחשב ושרת</span></li>
+</ul>
+</article>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; letter-spacing: 0; color: #A3ACB6">הסטאק שאנחנו עובדים איתו כל יום</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.85rem">
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">Go</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">Python</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">Bash</li>
+<li dir="ltr" style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">Linux (any distro)</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">Windows</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">macOS</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">AWS EC2</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">GPU cloud</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">JumpCloud MDM</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">AppArmor</li>
+<li style="padding: 9px 14px; border: 1px solid #C8F031; color: #ECEEF0">CIS Benchmarks</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="engage" style="padding: 104px 24px">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; letter-spacing: 0; color: #A3ACB6">03 — איך אנחנו עובדים</p>
+<h2 style="margin: 0; max-width: 54rem; font-stretch: 125%; font-weight: 800; font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.02; letter-spacing: 0; text-wrap: balance">שלוש דרכים לעבוד יחד.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 320px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.3rem">פרויקט</h3>
+<p style="margin: 0; color: #C3CAD2">היקף קבוע, מחיר קבוע. סקר אבטחה, הקשחה, מיגרציה של מערכות הפעלה או הקמת סביבה חדשה — כולל תיעוד מלא.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 1rem; font-weight: 500">החל מ-[מחיר]</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #111418; border: 1px solid #C8F031; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px">
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.3rem">ריטיינר</h3>
+<span style="padding: 4px 10px; background: #C8F031; color: #0B0D0F; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">מומלץ</span>
+</div>
+<p style="margin: 0; color: #C3CAD2">בנק שעות חודשי לתפעול, עדכונים, ניטור ותמיכה במערכות שאנחנו מפעילים עבורכם.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 1rem; font-weight: 500">[מחיר] לחודש</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #111418; border: 1px solid #1F242B; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-stretch: 112%; font-weight: 700; font-size: 1.3rem">תקלות וכוננות</h3>
+<p style="margin: 0; color: #C3CAD2">עזרה מהירה כשמשהו נפל או נפרץ, ואחר כך תחקיר כתוב ותיקונים כדי שזה לא יחזור.</p>
+<p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #1F242B; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 1rem; font-weight: 500">[מחיר] לשעה</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 20px 24px; background: #111418; border: 1px solid #2C333C">
+<span style="flex: 0 0 auto; padding: 6px 12px; background: #C8F031; color: #0B0D0F; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; font-weight: 700">עבודה מרחוק</span>
+<p style="margin: 0; flex: 1 1 420px; min-width: 0; color: #C3CAD2">עבודה מרחוק היא הסטנדרט שלנו. ביקור של טכנאי באתר — למשל להקמה ראשונית של תשתית בפרויקט חדש או לייעוץ מיוחד — אפשרי כשיש בו צורך אמיתי, אבל הוא מתומחר בתעריף גבוה יותר, ובניגוד לעבודה מרחוק הוא לא תמיד זמין: ייתכן שתצטרכו לחכות לתור פנוי.</p>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px">
+<li style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #2C333C; padding-top: 16px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.85rem; font-weight: 700; color: #C8F031">1</span>
+<span style="font-weight: 700; font-size: 1.05rem">שיחת היכרות</span>
+<span style="color: #A3ACB6">30 דקות כדי להבין את הסביבה שלכם ומה הכי כואב.</span>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #2C333C; padding-top: 16px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.85rem; font-weight: 700; color: #C8F031">2</span>
+<span style="font-weight: 700; font-size: 1.05rem">אבחון</span>
+<span style="color: #A3ACB6">סקירת הרשאות ומלאי, עם דוח ממצאים כתוב.</span>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #2C333C; padding-top: 16px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.85rem; font-weight: 700; color: #C8F031">3</span>
+<span style="font-weight: 700; font-size: 1.05rem">תוכנית והצעת מחיר</span>
+<span style="color: #A3ACB6">היקף מתועדף, לוח זמנים והצעת מחיר קבועה.</span>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #2C333C; padding-top: 16px">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.85rem; font-weight: 700; color: #C8F031">4</span>
+<span style="font-weight: 700; font-size: 1.05rem">ביצוע ותמיכה</span>
+<span style="color: #A3ACB6">בונים, מקשיחים ומתעדים — ואז דואגים שזה ימשיך לעבוד.</span>
+</li>
+</ol>
+</div>
+</section>
+
+<section id="contact" style="padding: 104px 24px; background-color: #0F1215; background-image: linear-gradient(#15191E 1px, transparent 1px), linear-gradient(90deg, #15191E 1px, transparent 1px); background-size: 64px 64px; border-top: 1px solid #1F242B">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.8rem; letter-spacing: 0; color: #A3ACB6">04 — צור קשר</p>
+<h2 style="margin: 0; font-stretch: 125%; font-weight: 800; font-size: clamp(2.5rem, 5.5vw, 4.5rem); line-height: 0.98; letter-spacing: 0">ספרו לנו מה <span style="color: #C8F031">רץ אצלכם.</span></h2>
+<p style="margin: 0; max-width: 34rem; font-size: 1.15rem; color: #C3CAD2">כתבו כמה שורות על הסביבה שלכם ועל הסיכון הגדול ביותר. תקבלו תשובה ממהנדס, לא מאיש מכירות.</p>
+<dl style="margin: 8px 0 0; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0; color: #8B95A0">אימייל</dt>
+<dd style="margin: 0; font-size: 1.1rem"><a dir="ltr" href="mailto:hello@exit0.space">hello@exit0.space</a></dd>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0; color: #8B95A0">LinkedIn</dt>
+<dd style="margin: 0; font-size: 1.1rem"><a dir="ltr" href="https://www.linkedin.com/">[LINKEDIN PROFILE]</a></dd>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0; color: #8B95A0">מיקום</dt>
+<dd style="margin: 0; font-size: 1.1rem">הדר 8, חולון, ישראל</dd>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<dt style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0; color: #8B95A0">צורת עבודה</dt>
+<dd style="margin: 0; font-size: 1.1rem">מרחוק כסטנדרט. טכנאי באתר בתיאום מראש — בתעריף גבוה יותר ובכפוף לזמינות.</dd>
+</div>
+</dl>
+</div>
+<form action="https://formsubmit.co/hello@exit0.space" method="POST" style="flex: 1 1 460px; min-width: 0; background: #111418; border: 1px solid #2C333C; box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5); padding: 36px; display: flex; flex-direction: column; gap: 18px">
+<input type="hidden" name="_subject" value="פנייה חדשה מ-exit0.space">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
+<div style="display: flex; flex-wrap: wrap; gap: 18px">
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<label for="f-name" style="font-size: 0.875rem; font-weight: 500; color: #C3CAD2">שם</label>
+<input id="f-name" name="name" type="text" required autocomplete="name" style="font: inherit; width: 100%; box-sizing: border-box; min-height: 50px; padding: 10px 14px; border: 1px solid #3A424C; background: #0B0D0F; color: #ECEEF0">
+</div>
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<label for="f-company" style="font-size: 0.875rem; font-weight: 500; color: #C3CAD2">חברה</label>
+<input id="f-company" name="company" type="text" autocomplete="organization" style="font: inherit; width: 100%; box-sizing: border-box; min-height: 50px; padding: 10px 14px; border: 1px solid #3A424C; background: #0B0D0F; color: #ECEEF0">
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-email" style="font-size: 0.875rem; font-weight: 500; color: #C3CAD2">אימייל עבודה</label>
+<input id="f-email" name="email" type="email" required dir="ltr" autocomplete="email" style="font: inherit; width: 100%; box-sizing: border-box; min-height: 50px; padding: 10px 14px; border: 1px solid #3A424C; background: #0B0D0F; color: #ECEEF0">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-need" style="font-size: 0.875rem; font-weight: 500; color: #C3CAD2">במה אפשר לעזור?</label>
+<select id="f-need" name="need" style="font: inherit; width: 100%; box-sizing: border-box; min-height: 50px; padding: 10px 14px; border: 1px solid #3A424C; background: #0B0D0F; color: #ECEEF0">
+<option>סקר אבטחה והקשחה</option>
+<option>מיגרציה של מערכות הפעלה: Windows ⇄ Linux</option>
+<option>DevSecOps ואבטחת CI/CD</option>
+<option>פרויקט תוכנה או אינטגרציה: Go, Python, Bash ועוד</option>
+<option>ניטור ו-SRE</option>
+<option>ניהול ענן או שרתים מקומיים</option>
+<option>תמיכה שוטפת או ריטיינר</option>
+<option>משהו לא עובד עכשיו</option>
+</select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-msg" style="font-size: 0.875rem; font-weight: 500; color: #C3CAD2">הסביבה שלכם והבעיה העיקרית</label>
+<textarea id="f-msg" name="message" required rows="5" style="font: inherit; width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1px solid #3A424C; background: #0B0D0F; color: #ECEEF0; resize: vertical"></textarea>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<button type="submit" style="font: inherit; font-weight: 600; font-size: 1.05rem; min-height: 56px; padding: 0 30px; background: #C8F031; color: #0B0D0F; border: 0; cursor: pointer">שליחת פנייה</button>
+<span style="font-size: 0.9rem; color: #A3ACB6">מענה תוך [יום עסקים אחד].</span>
+</div>
+</form>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1F242B">
+<div style="max-width: 1280px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; font-size: 0.9rem; color: #8B95A0">
+<span style="font-family: 'JetBrains Mono', 'IBM Plex Sans Hebrew', ui-monospace, monospace" dir="ltr">© 2026 Exit 0 · exit0.space</span>
+<nav aria-label="ניווט תחתון" style="display: flex; flex-wrap: wrap; gap: 4px 24px">
+<a href="#services" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; color: #C3CAD2">שירותים</a>
+<a href="#clients" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; color: #C3CAD2">לקוחות</a>
+<a href="#contact" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; color: #C3CAD2">צור קשר</a>
+</nav>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
